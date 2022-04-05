@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup Label="Paths">
+        <ProjectDir>$(MSBuildThisFileDirectory)\..\</ProjectDir>
+        <PluginOutputDirectory>$(ProjectDir)Build\</PluginOutputDirectory>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Common Properties">
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
+        <OutputPath>$(PluginOutputDirectory)</OutputPath>
+        <OutDir>$(OutputPath)</OutDir>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <DefaultItemExcludes>$(DefaultItemExcludes);*.binlog</DefaultItemExcludes>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+        <DebugType>portable</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+
+        <PackageVersion>$(AssemblyVersion)</PackageVersion>
+    </PropertyGroup>
+
+
+    <!-- Shared Items -->
+
+    <ItemGroup Label="Dyson Sphere Program">
+
+        <PackageReference Include="BepInEx.Core" Version="6.0.0-*" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.IL2CPP" Version="6.0.0-*"/>
+        <PackageReference Include="Il2CppAssemblyUnhollower.BaseLib" Version="0.4.*"/>
+        
+        <Reference Include="$(ProjectDir)lib\Il2Cppmscorlib.dll" Private="false" SpecificVersion="true"/>
+        <Reference Include="$(ProjectDir)lib\UnityEngine.dll" Private="false" SpecificVersion="true"/>
+        <Reference Include="$(ProjectDir)lib\UnityEngine.CoreModule.dll" Private="false" SpecificVersion="true"/>
+        <Reference Include="$(ProjectDir)lib\UnityEngine.InputLegacyModule.dll" Private="false" SpecificVersion="true"/>
+
+    </ItemGroup>
+
+</Project>
