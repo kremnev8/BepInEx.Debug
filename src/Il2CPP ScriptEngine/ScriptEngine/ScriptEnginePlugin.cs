@@ -1,13 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using BepInEx;
+﻿using BepInEx;
 using BepInEx.Configuration;
-using BepInEx.IL2CPP;
 using BepInEx.Logging;
-using Mono.Cecil;
-using UnhollowerRuntimeLib;
+using BepInEx.Unity.IL2CPP;
+using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
 
 namespace ScriptEngine
